@@ -1,0 +1,2 @@
+- HTML stands for Hyper Text Markup Language.
+- To be able to view our wbe page we need to use a browser.
