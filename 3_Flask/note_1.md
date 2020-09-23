@@ -17,3 +17,28 @@
 - From the root `app` directory, run the following:
 `pip freeze > requirements.txt`
 - To install packages from a `requirements.txt` file, run `pip install -r requirements.txt`
+
+## Serving HTML files
+- Move into the `app` directory with: `cd app`
+- Create the `templates` directory and move into it: `mkdir templates` `cd templates`
+- Create a template called `index.html`
+`touch index.html`
+
+- The project file structure should now look like the following:
+```
+.
+├── app
+│   ├── __init__.py
+│   ├── admin_views.py
+│   ├── templates
+│   │   └── index.html
+│   └── views.py
+├── requirements.txt
+└── run.py
+```
+- Flask will look in the `templates` directory we've just created for `index.html` (It's the default place Flask will go to look for HTML files when the `render_template` function is called)
+
+### Template directories
+- We're going to create 2 new directories within our `templates` directory:
+    - public - will contain all of the HTML files we want to serve from `views.py`
+    - admin - will contain any HTML files we'll serve from our admin routes in `admin_views.py`
