@@ -24,7 +24,7 @@
 - `python3 app.py`
 - Stop the app by hitting `Ctrl + c`
 
-### Flas environment variables
+### Flask environment variables
 - Running `export FLASK_APP=app.py` will set the `FLASK_APP` variable to `app.py`
 - Running `export FLASK_ENV=development` tells Flask we want to run our app in development mode
 - Warning: never run a live Flask application in production using development mode
