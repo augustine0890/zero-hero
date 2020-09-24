@@ -42,3 +42,26 @@
 - We're going to create 2 new directories within our `templates` directory:
     - public - will contain all of the HTML files we want to serve from `views.py`
     - admin - will contain any HTML files we'll serve from our admin routes in `admin_views.py`
+
+## Serving static files
+```
+├── app
+│   ├── __init__.py
+│   ├── admin_views.py
+│   ├── static
+│   │   ├── css
+│   │   │   └── style.css
+│   │   ├── img
+│   │   │   └── my-image.png
+│   │   └── js
+│   │       └── app.js
+│   ├── templates
+│   │   ├── admin
+│   │   │   └── dashboard.html
+│   │   └── public
+│   │       └── index.html
+│   └── views.py
+├── requirements.txt
+└── run.py
+```
+- Flask has a function called `url_for` which can be used in our HTML to provide a path to any static files we want to fetch.
