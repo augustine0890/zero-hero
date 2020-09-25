@@ -6,6 +6,22 @@
     <title>Dashboard</title>
 </head>
 <body>
+    {% extends 'admin/templates/admin_template.html' %}
+
+    {% block title %}
+        Admin dashboard
+    {% endblock title %}
+
+    {% block main %}
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1>ADMIN DASHBOARD</h1>
+                </div>
+            </div>
+        </div>
+    {% endblock main %}
+
     <h1 style="color: green">Admin Dashboard</h1>
     <p>This HTML file is served from the admin templates directory</p>
 </body>

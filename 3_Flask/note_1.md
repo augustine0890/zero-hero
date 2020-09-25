@@ -65,3 +65,43 @@
 └── run.py
 ```
 - Flask has a function called `url_for` which can be used in our HTML to provide a path to any static files we want to fetch.
+
+## Jinja template inheritance
+```
+app
+├── app
+│   ├── __init__.py
+│   ├── admin_views.py
+│   ├── static
+│   │   ├── css
+│   │   │   └── style.css
+│   │   ├── img
+│   │   │   └── flask.png
+│   │   └── js
+│   │       └── app.js
+│   ├── templates
+│   │   ├── admin
+│   │   │   ├── dashboard.html
+│   │   │   └── templates
+│   │   │       └── admin_template.html
+│   │   └── public
+│   │       ├── index.html
+│   │       └── templates
+│   │           └── public_template.html
+│   └── views.py
+├── requirements.txt
+└── run.py
+```
+- Start with the Bootstrap template [here](https://getbootstrap.com/docs/4.2/getting-started/introduction/#starter-template) and get the jQuery source code [here](https://code.jquery.com/jquery-3.0.0.slim.min.js).
+- Import the `bootstrap.min.css` file in the `<head>`
+- Add the `{% block title %}` and `{% endblock %}` tags between the `<title> </title>` tags
+- Add the `{% block main %}` and `{% endblock %}` tags between the `<main> </main>` tags
+- Import the `jquery.slim.min` library
+- Import the `bootstrap.bundle.min.js` library
+- Import out custom JavaScript file down at the bottom just like in the last part of the series
+- Finally, add the `{% block script %}` and `{% endblock %}` tags just before the closing `</body>` tag
+
+### Child templates
+- Use the  `{% extends "path/to/our/template.html" %}` syntax to import a base template
+- `{% block title %}Home{% endblock %}` will set the page title
+- Then fill in the blocks we declared in our base template by once again, using the `{% block something %} {% endblock %}` syntax
