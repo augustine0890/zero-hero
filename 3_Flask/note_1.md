@@ -105,3 +105,29 @@ app
 - Use the  `{% extends "path/to/our/template.html" %}` syntax to import a base template
 - `{% block title %}Home{% endblock %}` will set the page title
 - Then fill in the blocks we declared in our base template by once again, using the `{% block something %} {% endblock %}` syntax
+
+## Jinja template design
+- Access objects in Jinja with the `{{ object }}` syntax
+### Looping
+```
+{% for variable in iterable %}
+<!-- Do something with the variable -->
+{{ variable }}
+{% endfor %}
+```
+- Enumarate an iterable using `{{ loop.index }}`
+- `loop.index` starts at 1. To start enumerating at 0, use `loop.index0`
+- Access class attributes using the `class.attribute` syntax
+- Close any `if` conditionals with the `{% endif %}` syntax
+- `|` Applies a filter. For example `{{ langs|length }}` will return 4
+- `~` Converts all operands to strings and concatenates them, for example `{{ "cool" ~ "==" ~ cool }}` returns `"cool==True"`
+- Be sure to close the conditional or loop with an `{% endif %}` or `{% endfor %}` respectively
+- Create custom filters by registering them on our app using the @app.template_filter syntax and passing it the name of the filter we want to create.
+- Define a `macro` with the following syntax:
+```
+{% macro macro_name(**args, **kwargs) -%}
+  <!-- We then define the code we want as part of our macro -->
+  <!-- We have access to any args & kwargs passed into the macro -->
+  <!-- We access the args and kwargs with the familiar `{{ variable }}` syntax -->
+{%- endmacro %}
+```
