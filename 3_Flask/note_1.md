@@ -131,3 +131,8 @@ app
   <!-- We access the args and kwargs with the familiar `{{ variable }}` syntax -->
 {%- endmacro %}
 ```
+
+## Working with forms
+- To access form data in our route, we use `request.form`.
+- The `redirect` function, amongst many other things allows us to redirect the client to different parts our app.
+- We could use the `required` attribute in the HTML form and let the browser do the validation for us
