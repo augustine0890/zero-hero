@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect
+from flask import render_template, request, redirect, jsonify, make_response
 from app import app
 
 from datetime import datetime
@@ -115,3 +115,19 @@ def multiple(foo, bar, baz):
     print(f"baz is {baz}")
 
     return f"foo is {foo}, bar is {bar}, baz is {baz}"
+
+@app.route("/json", methods=["POST"])
+def json_example():
+    # Validate the request body contains JSON
+    if request.is_json:
+        req = request.get_json()
+        response_body = {
+            "message": "JSON received!",
+            "sender": req.get("name")
+        }
+        res = make_response(jsonify(response_body), 200)
+        return res
+    else:
+        return make_response(jsonify({"message": "Request body must be JSON"}), 400)
+
+

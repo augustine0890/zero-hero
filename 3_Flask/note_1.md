@@ -152,3 +152,18 @@ def multiple(foo, bar, baz):
 
     return f"foo is {foo}, bar is {bar}, baz is {baz}"
 ```
+
+## Working with JSON data
+**Postman URL**
+- Create a new `POST` request to URL: `http://127.0.0.1:5000/json`
+
+**Postman body**
+```yaml
+{
+    "name": "Julian",
+    "message": "Posting JSON data to Flask!"
+}
+```
+**cURL request**
+`curl --header "Content-Type: application/json" --request POST --data '{"name":"Augustine","message":"Posting JSON data to Flask!"}' http://127.0.0.1:5000/json`
+- Useful functions and methods such as `is_json`, `get_json()` and `jsonify()`, along with helpful functions such as `make_response()`.
