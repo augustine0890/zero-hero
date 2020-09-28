@@ -167,3 +167,12 @@ def multiple(foo, bar, baz):
 **cURL request**
 `curl --header "Content-Type: application/json" --request POST --data '{"name":"Augustine","message":"Posting JSON data to Flask!"}' http://127.0.0.1:5000/json`
 - Useful functions and methods such as `is_json`, `get_json()` and `jsonify()`, along with helpful functions such as `make_response()`.
+
+## Fetch API
+- `fetch()` takes 2 arguments, a URL or `input` and a set of options or `init` as in the fetch documentation.
+  - `method: "POST"` As we're posting data to the server
+  - `credentials: "include"` To send any cookies from the current domain/client to the server
+  - `body: JSON.stringify(entry)` Converts our JSON object into a string
+  - `cache: "no-cache"` We're not interested in any cached data
+  - `headers: new Headers({"content-type": "application/json"})` Adds a header to tell the server we're sending JSON
+- Asynchronously sending and receiving data betwen the client and the server is relitively simple using the Fetch API.
