@@ -136,3 +136,19 @@ app
 - To access form data in our route, we use `request.form`.
 - The `redirect` function, amongst many other things allows us to redirect the client to different parts our app.
 - We could use the `required` attribute in the HTML form and let the browser do the validation for us
+
+## Generating dynamic URLs
+- to catch a a value in the URL and store it as a variable it must look `<like_this>` and follow a trailing slash.
+
+**app/app/views.py**
+```python
+@app.route("/multiple/<foo>/<bar>/<baz>")
+def multiple(foo, bar, baz):
+
+    print(f"foo is {foo}")
+    print(f"bar is {bar}")
+    print(f"baz is {baz}")
+
+
+    return f"foo is {foo}, bar is {bar}, baz is {baz}"
+```
