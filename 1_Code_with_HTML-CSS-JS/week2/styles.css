@@ -1,0 +1,13 @@
+/** This is a comment that the browser will ignore,
+* Put your CSS code into this file
+*/
+
+h1 {
+    display: block; /** Block display */
+    text-align: center; /** Text alignment */
+    color: tomato; /** this is will change the coloer */
+    font-size: 2em; /** Change font size */
+    margin-top: 1em; /** Margin top */
+    margin-bottom: 1em; /** Margin bottom */
+    font-weight: bold; /** Font weight */
+}
