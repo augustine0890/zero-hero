@@ -1,13 +1,56 @@
-/** This is a comment that the browser will ignore,
-* Put your CSS code into this file
-*/
+body {
+    background-color: black;
+    color: white;
+}
 
+a {
+    font-family: sans-serif;
+    font-weight: 400;
+    color: gray;
+    text-decoration: none;
+}
+
+a:hover {
+    color: black;
+    background-color: white;
+}
+
+.blue_link:hover {
+    color: blue;
+    background: gray;
+}
 h1 {
-    display: block; /** Block display */
-    text-align: center; /** Text alignment */
-    color: tomato; /** this is will change the coloer */
-    font-size: 2em; /** Change font size */
-    margin-top: 1em; /** Margin top */
-    margin-bottom: 1em; /** Margin bottom */
-    font-weight: bold; /** Font weight */
+    font-family: sans-serif;
+}
+
+p {
+    font-family: monospace;
+    font-size: 20px;
+}
+
+.indent {
+    margin-left: 20px;
+}
+
+.graph_below {
+    margin-bottom: 10px;
+}
+
+@media (min-width: 2000px) {
+    body {
+        background-color: rgba(128, 128, 128, 0.911);
+        color: black;
+    }
+    
+    a {
+        color: black;
+    }
+
+    p {
+        font-weight: bold;
+    }
+}
+
+.thin_border {
+    border: 1px solid blueviolet
 }
