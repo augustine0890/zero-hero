@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <title>Script Tag</title>
+</head>
+<body>
+    <h1 id="title" onclick="sayGoodbye()">Hello</h1>
+
+    <!--The script tag is where you can put more complex scripts-->
+    <script type="text/javascript">
+        function sayGoodbye() {
+            $('#title').html('Goodbye');
+            alert("See you again!");
+        }
+    </script>
+   
+</body>
+</html>

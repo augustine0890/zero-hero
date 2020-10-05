@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <title>Image Gallery</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Image Gallery</h1>
+        <div class="row">
+            <div class="col-md-3">
+                <img class="crop-img"
+                    src="images/img_1.jpg"
+                    alt="graffittied building">
+            </div>
+            <div class="col-md-3">
+                <img class="crop-img"
+                    src="images/img_3.jpg"
+                    alt="display of cheese">
+            </div>
+            <div class="col-md-3">
+                <img class="crop-img"
+                    src="images/img_4.jpg"
+                    alt="synethesizer workshop">
+            </div>
+            <div class="col-md-3">
+                <img class="crop-img"
+                    src="images/img_5.jpg"
+                    alt="city night">
+            </div>
+        </div>
+
+        <!--
+			this is the large image which is
+			on a row of its own. 
+			I will change it source in the 
+			javascript
+		-->
+        <div class="row">
+            <div class="col-md-12">
+                <img id="bigImage"
+                    class="large-img"
+                    src="images/img_1.jpg"
+                    alt="graffittied building">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // when we click on the thumbnail
+		// we set the src attribute of the 
+		// bit image to be the same as the 
+		// src of the image we have clicked on
+		// ("this"). This loads the same
+		// image file into the big image
+        $(".crop-img").click(function() {
+            $("#bigImage").attr('src',
+                $(this).attr('src'));
+            $("#bigImage").attr('alt',
+                $(this).attr('alt'));
+        });
+    </script>
+</body>
+</html>
