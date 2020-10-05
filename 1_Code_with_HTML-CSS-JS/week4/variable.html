@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <title>Variables</title>
+</head>
+<body>
+    <h1 id="number"
+        onclick="count();"></h1>
+
+    <script type="text/javascript">
+        var counter = 0;
+        $("#number").html(counter);
+        function count() {
+            counter += 1;
+            $("#number").html(counter);
+        };
+    </script>
+</body>
+</html>
