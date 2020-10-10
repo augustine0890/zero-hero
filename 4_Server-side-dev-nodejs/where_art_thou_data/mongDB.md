@@ -60,3 +60,14 @@ alias mongod-stop='brew services stop mongodb-community@4.4'
 - `db.dishes`
 
 [MongoDB Cheat Sheet](https://gist.github.com/bradtraversy/f407d642bdc3b31681bc7e56d95485b6)
+
+## Mongoose ODM
+- MongoDB stores data in the form of documents
+- Object Data Model or Object Document Mapping or Object relational mapping (ORM)
+
+## Mongoose Schema
+- Schema: struture of the data to be stored
+- Defines all the fields of your document and their types
+- Schema types: String, Number, Date, Buffer, Boolean, Mixed, ObjectId, Array.
+- Schema is used to create a Model function
+- Schemas can be nested to enable supporting embedded or subdocuments
