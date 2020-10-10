@@ -58,6 +58,8 @@ alias mongod-stop='brew services stop mongodb-community@4.4'
 - `use conFusion`
 - Create a collection named `dishes`
 - `db.dishes`
+- Delete (drop) collection named `dishes`
+- `db.dishes.drop()`
 
 [MongoDB Cheat Sheet](https://gist.github.com/bradtraversy/f407d642bdc3b31681bc7e56d95485b6)
 

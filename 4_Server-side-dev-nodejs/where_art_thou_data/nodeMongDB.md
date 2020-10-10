@@ -30,3 +30,9 @@
 - Comsumers of promise are notified of the fulfillment or rejection of the promise
     - Register the callbacks to handle fulfillment and rejection with the `.then()` --> can be chained
     - Use `.catch()` for handling errors
+
+**HTTP request to Database Operation Mapping**
+- Every incoming request nees to be decoded to decide the nature of the request:
+    - GET, PUT, POST, DELETE
+    - Resource affected
+    - Data in body of request
