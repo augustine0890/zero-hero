@@ -24,3 +24,6 @@
 - Using cookies-parser
     - The _cookies-parser_ Experss middleware is already included in the Express REST API application
     - `npm install cookie-parser --save`
+
+## Express Sessions
+- `npm install express-session session-file-store --save`
