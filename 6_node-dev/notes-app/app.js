@@ -1,20 +1,63 @@
-const validator = require('validator');
+// const validator = require('validator');
 const chalk = require('chalk');
-const add = require('./utils');
-const getNotes = require('./notes');
+// const add = require('./utils');
+// const getNotes = require('./notes');
+const yargs = require('yargs');
 
+// console.log(add(1, 2));
+// console.log(getNotes('This is a note.'));
 
-console.log(add(1, 2));
-console.log(getNotes('This is a note.'));
-
-console.log(validator.isEmail('augustine@example.com'));
-console.log(validator.isEmail('augustine.com'));
-console.log(validator.isURL('https://test.com'));
-console.log(validator.isURL('augustine@example.com'));
+// console.log(validator.isEmail('augustine@example.com'));
+// console.log(validator.isEmail('augustine.com'));
+// console.log(validator.isURL('https://test.com'));
+// console.log(validator.isURL('augustine@example.com'));
 
 const error = chalk.inverse.bold.red;
 const warning = chalk.keyword('orange');
 
-console.log(error('Error!'));
-console.log(warning('Warning!'));
-console.log(chalk.green('Success!'));
+// console.log(error('Error!'));
+// console.log(warning('Warning!'));
+// console.log(chalk.bold.green('Success!'));
+
+// console.log(process.argv);
+
+// Customize yargs version
+yargs.version('1.1.0');
+
+// add, remove, read, list
+// Create add command
+yargs.command({
+    command: 'add',
+    describe: 'Add a new note',
+    handler: function () {
+        console.log('Adding a new note!')
+    }
+});
+
+// Create remove command
+yargs.command({
+    command: 'remove',
+    describe: 'Remove the note',
+    handler: function () {
+        console.log('Removing the note')
+    }
+});
+
+// Create list command
+yargs.command({
+    command: 'list',
+    describe: 'List your notes',
+    handler: function () {
+        console.log('Listing out all the note')
+    }
+});
+
+// Create read command
+yargs.command({
+    command: 'read',
+    describe: 'Read a note',
+    handler: function () {
+        console.log('Reading a note')
+    }
+});
+console.log(yargs.argv);
