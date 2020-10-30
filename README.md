@@ -5,4 +5,4 @@
 4. [Server-side-dev-nodejs](https://github.com/augustine0890/zero-hero/blob/master/4_Server-side-dev-nodejs/README.md)
 5. [jQuery-essential](https://github.com/augustine0890/zero-hero/blob/master/5_jQuery-essential/README.md)
 6. [node-dev](https://github.com/augustine0890/zero-hero/blob/master/6_node-dev/README.md)
-7. [Java]()
+7. [Java](https://github.com/augustine0890/zero-hero/blob/master/7_Java/README.md)
