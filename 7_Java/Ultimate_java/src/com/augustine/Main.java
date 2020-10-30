@@ -45,6 +45,14 @@ public class Main {
         // Constants
         final float pi = 3.14F;
 
+        // Arithmetic
+        int result = 10 / 3;
+        double res2 = (double) 10 / (double) 3;
+
+        int x = 1;
+        x++;
+        x += 2;
+
         System.out.println(message);
         System.out.println(message.endsWith("!"));
         System.out.println(message.indexOf("H"));
@@ -67,6 +75,10 @@ public class Main {
 
         System.out.println(Arrays.deepToString(matrix));
         System.out.println(Arrays.deepToString(matrix2));
+
+        System.out.println(result);
+        System.out.println(res2);
+        System.out.println(x);
 
         System.out.println("===End===");
     }
