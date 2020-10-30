@@ -24,3 +24,11 @@ htmlcov/
 *,cover
 
 node_modules
+
+# Intellij Patch
+*.iml
+modules.xml
+*.ipr
+
+# Java
+*.class
