@@ -42,6 +42,9 @@ public class Main {
 
         int[][] matrix2 = { { 1, 2, 3}, { 4, 5, 6} };
 
+        // Constants
+        final float pi = 3.14F;
+
         System.out.println(message);
         System.out.println(message.endsWith("!"));
         System.out.println(message.indexOf("H"));
