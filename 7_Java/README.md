@@ -12,4 +12,5 @@
 - Primitive: storing simple values
     - byte, short, int, long, float, double, char, boolean
 - Reference: storing complex objects
+    - date, mail message etc
 

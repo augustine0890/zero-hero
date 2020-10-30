@@ -1,5 +1,8 @@
 package com.augustine;
 
+import java.awt.*;
+import java.util.Date;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -11,6 +14,14 @@ public class Main {
         char letter = 'A';
         boolean isExpire = false;
 
+        Date now = new Date();
+//        now.getTime();
+
+        Point point1 = new Point(1, 1);
+        Point point2 = point1;
+        point1.x = 2;
+
+
         System.out.println("Hello World");
         System.out.println(myAge);
         System.out.println(viewsCount);
@@ -19,5 +30,9 @@ public class Main {
         System.out.println(letter);
         System.out.println(isExpire);
 
+        System.out.println(now);
+
+        System.out.println(point2);
+        System.out.println("===End===");
     }
 }
