@@ -53,6 +53,19 @@ public class Main {
         x++;
         x += 2;
 
+        // Order of Operations
+        int y = 2 + 3 * 5;
+
+        // Casting: byte > short > int > long > float > double
+        short z = 1;
+        int t = z + 2;
+
+        double x1 = 1.1;
+        int y1 = (int)x1 + 2;
+
+        String x2 = "1";
+        int y2 = Integer.parseInt(x2) + 2;
+
         System.out.println(message);
         System.out.println(message.endsWith("!"));
         System.out.println(message.indexOf("H"));
@@ -79,6 +92,11 @@ public class Main {
         System.out.println(result);
         System.out.println(res2);
         System.out.println(x);
+
+        System.out.println(y);
+        System.out.println(t);
+        System.out.println(y1);
+        System.out.println(y2);
 
         System.out.println("===End===");
     }
