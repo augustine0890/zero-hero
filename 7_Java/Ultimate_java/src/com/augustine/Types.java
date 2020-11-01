@@ -4,6 +4,7 @@ import java.awt.*;
 import java.text.NumberFormat;
 import java.util.Arrays;
 import java.util.Date;
+import java.util.Scanner;
 
 public class Types {
 
@@ -75,6 +76,13 @@ public class Types {
         // NumberFormat currency = NumberFormat.getCurrencyInstance();
         NumberFormat percent = NumberFormat.getPercentInstance();
         String res5 = percent.format(0.1);
+
+        // Reading Input
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Name: ");
+        // byte age = scanner.nextByte();
+        String name = scanner.nextLine().trim();
+        System.out.println("You are " + name);
 
         System.out.println(message);
         System.out.println(message.endsWith("!"));
