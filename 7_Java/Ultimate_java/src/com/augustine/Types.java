@@ -1,10 +1,11 @@
 package com.augustine;
 
 import java.awt.*;
+import java.text.NumberFormat;
 import java.util.Arrays;
 import java.util.Date;
 
-public class Main {
+public class Types {
 
     public static void main(String[] args) {
         // Primitive types
@@ -66,6 +67,15 @@ public class Main {
         String x2 = "1";
         int y2 = Integer.parseInt(x2) + 2;
 
+        // Math Class
+        int res3 = Math.round(1.1F);
+        double res4 = Math.round(Math.random() * 100);
+
+        // Formatting Numbers
+        // NumberFormat currency = NumberFormat.getCurrencyInstance();
+        NumberFormat percent = NumberFormat.getPercentInstance();
+        String res5 = percent.format(0.1);
+
         System.out.println(message);
         System.out.println(message.endsWith("!"));
         System.out.println(message.indexOf("H"));
@@ -97,6 +107,11 @@ public class Main {
         System.out.println(t);
         System.out.println(y1);
         System.out.println(y2);
+
+        System.out.println(res3);
+        System.out.println(res4);
+
+        System.out.println(res5);
 
         System.out.println("===End===");
     }
