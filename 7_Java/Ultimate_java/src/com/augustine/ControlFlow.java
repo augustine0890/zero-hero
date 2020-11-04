@@ -20,5 +20,16 @@ public class ControlFlow {
         boolean hasCriminalRecord = false;
         boolean isEligible = (hasHighIncome || hasGoodCredit) && !hasCriminalRecord;
         System.out.println("Is eligible " + isEligible);
+
+        // If Statements
+        int temp = 32;
+        if (temp > 30) {
+            System.out.println("It's a hot day");
+            System.out.println("Drink water");
+        } else if (20 < temp) {
+            System.out.println("Beautiful day");
+        } else {
+            System.out.println("Cold day");
+        }
     }
 }
