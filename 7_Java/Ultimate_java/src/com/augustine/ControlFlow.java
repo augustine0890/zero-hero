@@ -31,5 +31,10 @@ public class ControlFlow {
         } else {
             System.out.println("Cold day");
         }
+
+        // Simplifying If Statements
+        int income = 120_000;
+        boolean highIncome = (income > 100_000);
+        System.out.println(highIncome);
     }
 }
