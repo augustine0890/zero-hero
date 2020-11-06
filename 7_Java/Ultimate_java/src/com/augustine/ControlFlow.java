@@ -36,5 +36,7 @@ public class ControlFlow {
         int income = 120_000;
         boolean highIncome = (income > 100_000);
         System.out.println(highIncome);
+        String className = income > 100_000 ? "First" : "Economy";
+        System.out.println(className);
     }
 }
