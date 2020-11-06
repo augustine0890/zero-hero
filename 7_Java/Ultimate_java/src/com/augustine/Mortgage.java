@@ -10,16 +10,37 @@ public class Mortgage {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Principal: ");
-        int principle = scanner.nextInt();
+        int principle = 0;
+        float monthlyInterest = 0;
+        int numberOfPayments = 0;
 
-        System.out.print("An Annual Interest Rate: ");
-        float annualInterest = scanner.nextFloat();
-        float monthlyInterest = annualInterest / PERCENT / MONTHS_IN_YEAR;
+        while (true) {
+            System.out.print("Principal ($1K - $1M): ");
+            principle = scanner.nextInt();
+            if (principle >= 1000 && principle <= 1_000_000)
+                break;
+            System.out.println("Enter a number between 1,000 and 1,000,000.");
+        }
 
-        System.out.print("The Period (Years): ");
-        byte years = scanner.nextByte();
-        int numberOfPayments = years * MONTHS_IN_YEAR;
+        while (true) {
+            System.out.print("An Annual Interest Rate: ");
+            float annualInterest = scanner.nextFloat();
+            if (annualInterest >= 1 && annualInterest <= 30) {
+                monthlyInterest = annualInterest / PERCENT / MONTHS_IN_YEAR;
+                break;
+            }
+            System.out.println("Enter a value greater than 0 and less than or equal to 30.");
+        }
+
+        while (true) {
+            System.out.print("The Period (Years): ");
+            byte years = scanner.nextByte();
+            if (years >= 1 && years <= 30) {
+                numberOfPayments = years * MONTHS_IN_YEAR;
+                break;
+            }
+            System.out.println("Enter a value between 1 and 30.");
+        }
 
         double mortgage = principle
                 * (monthlyInterest * Math.pow(1 + monthlyInterest, numberOfPayments))
@@ -27,6 +48,5 @@ public class Mortgage {
 
         String mortgageFormatted = NumberFormat.getCurrencyInstance().format(mortgage);
         System.out.println("Mortgage: " + mortgageFormatted);
-
     }
 }
