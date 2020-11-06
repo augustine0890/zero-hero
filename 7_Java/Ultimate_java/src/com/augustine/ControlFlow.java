@@ -36,7 +36,22 @@ public class ControlFlow {
         int income = 120_000;
         boolean highIncome = (income > 100_000);
         System.out.println(highIncome);
+        // The Ternary Operator
         String className = income > 100_000 ? "First" : "Economy";
         System.out.println(className);
+
+        // Switch Statement
+        String role = "admin";
+
+        switch (role) {
+            case "admin":
+                System.out.println("You're an admin");
+                break;
+            case "moderator":
+                System.out.println("You're a moderator");
+                break;
+            default:
+                System.out.println("You're a guest");
+        }
     }
 }
