@@ -66,7 +66,7 @@ public class ControlFlow {
             System.out.println("Looping " + i);
             i--;
         }
-
+        /*
         Scanner scanner = new Scanner(System.in);
         String input = "Initialize";
         while (true) {
@@ -78,6 +78,7 @@ public class ControlFlow {
                 break;
             System.out.println(input);
         }
+        */
 
         /* Do..While Loops
         do {
@@ -87,5 +88,14 @@ public class ControlFlow {
         } while (!input.equals("quit"));
 
          */
+
+        // For Each Loop
+        String[] fruits = {"Apple", "Mango", "Orange"};
+
+        for (int id = 0; id < fruits.length; id++)
+            System.out.println(fruits[id]);
+
+        for (String fruit: fruits)
+            System.out.println(fruit);
     }
 }
