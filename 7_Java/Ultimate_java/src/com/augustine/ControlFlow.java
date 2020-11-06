@@ -1,5 +1,7 @@
 package com.augustine;
 
+import java.util.Scanner;
+
 public class ControlFlow {
     public static void main(String[] args) {
         // Comparison Operators
@@ -53,5 +55,31 @@ public class ControlFlow {
             default:
                 System.out.println("You're a guest");
         }
+
+        // For Loops
+        for (int i = 0; i < 5; i++)
+            System.out.println("Hello, World!");
+
+        // While Loops
+        int i = 5;
+        while (i > 0) {
+            System.out.println("Looping " + i);
+            i--;
+        }
+
+        Scanner scanner = new Scanner(System.in);
+        String input = "Initialize";
+        while (!input.equals("quit")) {
+            System.out.println("Input: ");
+            input = scanner.next().toLowerCase();
+            System.out.println(input);
+        }
+
+        /* Do..While Loops */
+        do {
+            System.out.println("Input: ");
+            input = scanner.next().toLowerCase();
+            System.out.println(input);
+        } while (!input.equals("quit"));
     }
 }
