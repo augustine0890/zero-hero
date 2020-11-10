@@ -4,5 +4,11 @@ public class Zoo {
         tim.speak();
         tim.eat();
         tim.sleep();
+
+        Bird bird1 = new Bird("Pi", 1, "Female", 2);
+        bird1.speak();
+        bird1.fly();
+        bird1.eat();
+        bird1.sleep();
     }
 }
