@@ -44,11 +44,9 @@ public class Mortgage {
         float monthlyInterest = annualInterest / PERCENT / MONTHS_IN_YEAR;
         short numberOfPayments = (short) (years * MONTHS_IN_YEAR);
 
-        double balance = principle
+        return principle
                 * (Math.pow(1 + monthlyInterest, numberOfPayments) - Math.pow(1 + monthlyInterest, numberOfPaymentsMade))
                 / (Math.pow(1 + monthlyInterest, numberOfPayments) - 1);
-
-        return  balance;
     }
 
     private static void printPaymentSchedule(int principle, float annualInterest, byte years) {
