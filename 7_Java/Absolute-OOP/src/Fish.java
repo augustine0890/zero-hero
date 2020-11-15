@@ -3,4 +3,11 @@ public class Fish extends Animal{
         super(name, age, gender, weightIbLbs);
     }
 
+    public void swim() {
+        System.out.println("Swimming...");
+    }
+
+    public void move() {
+        System.out.println("Fish is swimming...");
+    }
 }
