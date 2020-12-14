@@ -6,3 +6,4 @@
 5. [jQuery-essential](https://github.com/augustine0890/zero-hero/blob/master/5_jQuery-essential/README.md)
 6. [node-dev](https://github.com/augustine0890/zero-hero/blob/master/6_node-dev/README.md)
 7. [Java](https://github.com/augustine0890/zero-hero/blob/master/7_Java/README.md)
+8. [Django](https://github.com/augustine0890/zero-hero/blob/master/8_Django/README.md)
