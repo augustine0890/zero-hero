@@ -9,12 +9,13 @@
     {% extends 'base.html' %}
 
     {% block content %}
-        {% for post in object_list %}
-            <div class="post-entry">
-                <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
-                <p>{{ post.body }}</p>
-            </div>
-        {% endfor %}
+    <div class="jumbotron">
+        <h1 class="display-4">Blog App</h1>
+        <p class="lead">A Blog website built with Django.</p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="{% url 'post_list' %}" role="button">View All Posts</a>
+        </p>
+    </div>
     {% endblock content %}
 </body>
 </html>

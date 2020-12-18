@@ -8,10 +8,10 @@
 <body>
     {% extends 'base.html' %}
     {% block content %}
-        <h1>Delete post</h1>
+        <h1>Delete</h1>
         <form action="" method="post">{% csrf_token %}
             <p>Are you sure you want to delete "{{ post.title }}"?</p>
-            <input type="submit" value="Confirm" />
+            <button class="btn btn-danger ml-2" type="submit">Confirm</button>
         </form>
     {% endblock content %}
 </body>

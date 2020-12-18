@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Posts{% endblock title %}</title>
+</head>
+<body>
+    {% block content %}
+
+        <div class="row">
+            <div class="col">
+                <div class="card card-body">
+                    <form method="get">
+                        {{filter.form}}
+
+                        <button class="btn btn-primary" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </br>
+        {% for post in filter.qs %}
+            <div class="card">
+                <div class="card-header">
+                    <a href="{% url 'post_detail' post.pk %}"><span class="font-weight-bold">{{ post.title|title }}</span> &middot;</a>
+                    <span class="text-muted">by {{ post.author }} | {{ post.date|date }} {{ post.date|time:"H:i"}}</span>
+                </div>
+                <div class="card-body">
+                    <p>{{ post.body }}</p>
+                    <a href="{% url 'post_edit' post.pk %}">Edit</a> | 
+                    <a href="{% url 'post_delete' post.pk %}">Delete</a>
+                </div>
+
+                <div class="card-footer">
+                    {% for comment in post.comments.all %}
+                    <p>
+                        <span class="font-weight-bold">{{ comment.author }} &middot;</span>
+                        {{ comment }}
+                    </p>
+                    {% endfor %}
+                </div>
+            </div>
+            <br />
+        {% endfor %}
+    {% endblock content %}
+</body>
+</html>

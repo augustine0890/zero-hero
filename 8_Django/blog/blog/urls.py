@@ -9,11 +9,11 @@ from .views import (
 )
 
 urlpatterns = [
-    path('post/<int:pk>/delete/',
+    path('<int:pk>/delete/',
         BlogDeleteView.as_view(), name='post_delete'),
-    path('post/<int:pk>/edit/',
+    path('<int:pk>/edit/',
         BlogUpdateView.as_view(), name='post_edit'),
-    path('post/new/', BlogCreateView.as_view(), name='post_new'),
-    path('post/<int:pk>/', BlogDetailView.as_view(), name='post_detail'),
-    path('', BlogListView.as_view(), name='home'),
+    path('new/', BlogCreateView.as_view(), name='post_new'),
+    path('<int:pk>/', BlogDetailView.as_view(), name='post_detail'),
+    path('', BlogListView.as_view(), name='post_list'),
 ]

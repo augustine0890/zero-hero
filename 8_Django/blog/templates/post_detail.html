@@ -11,11 +11,13 @@
     {% block content %}
     <div class="post-entry">
         <h2>{{ object.title }}</h2>
-        <p>{{ object.body }}</p>
+            <p>by {{ object.author }} | {{ object.date }}</p>
+            <p>{{ object.body }}</p>
     </div>
 
-    <a href="{% url 'post_edit' post.pk %}">+ Edit Blog Post</a>
-    <a href="{% url 'post_delete' post.pk %}">+ Delete Blog Post</a>
+    <p><a href="{% url 'post_edit' post.pk %}">Editt</a> |
+        <a href="{% url 'post_delete' post.pk %}">Delete</a></p>
+    <p>Back to <a href="{% url 'post_list' %}">All Posts</a>.</p>
     {% endblock content %}
 </body>
 </html>
