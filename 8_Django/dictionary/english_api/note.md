@@ -22,3 +22,7 @@
 - Authentication schemes
     - The default authentication schemes can be set globally in the settings module by adding a setting for default authentication classes.
     - Settings include BasicAuthentication, TokenAuthentication, SessionAuthentication, RemoteUserAuthentication and CustomAuthentication.
+
+**GENERIC VIEWS vs API VIEWS**
+- Using Generic Views allows us to achieve the same result with less code
+- API Views would require us to create a class to handle an individual item.
