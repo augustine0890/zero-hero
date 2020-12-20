@@ -26,3 +26,15 @@
 **GENERIC VIEWS vs API VIEWS**
 - Using Generic Views allows us to achieve the same result with less code
 - API Views would require us to create a class to handle an individual item.
+
+**ViewSet**
+- Combine the logic for a set of related views in a single class
+- It's a class-based View that doesn't provide method handlers such as `.get(), .post(),` or `.delete()` and instead provides actions such as `.list()` and `.create()`.
+- Need to register the ViewSet with a router class which automatically determines the urlconf for us.
+
+**ModelViewSet**
+- Inherited from GenericAPIView by mixing in the behavior of the various mixin classes.
+- Need to provide the queryset and serializer_class attributes
+- The actions provided by the ModelViewSet class are .`list(), .retrieve(), .create(), .update(), .partial_update()`, and `.destroy()`.
+- Mixins are smaller classes that can be combined to make a bigger class.
+
