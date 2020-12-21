@@ -54,3 +54,13 @@
 ```
 - Create a super user account<br>
 `python manage.py createsuperuser` user/pw: augustine/fitpet123
+
+**Django REST Framework**
+- `pipenv install djangorestframework==3.11.0`
+- Create a new `api` app
+`python manage.py startapp api`
+
+**Serializers**
+- A serializer translates data into a format that is easy to consume over the internet
+    - Typically JSON
+    - Display at an API endpoint
