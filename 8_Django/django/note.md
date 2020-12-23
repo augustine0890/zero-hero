@@ -114,3 +114,109 @@ below_5 = Count('model', filter=Q(model__rating__lte=5))
 
 Model.objects.filter(field__startswith="Django").annotate(num_field=Count('field'))
 ```
+
+```python
+from events.models import Event
+
+queryset = Event.objects.all()
+print(queryset.query)
+str(queryset)
+
+queryset = Event.objects.filter(years_ago__gt=5)
+str(queryset.query)
+
+from django.contrib.auth.models import User
+queryset = User.objects.filter(
+    first_name__startswith='R'
+) | User.objects.filter(
+    last_name__startswith='D'
+)
+
+from django.db.models import Q
+qs = User.objects.filter(Q(first_name__startswith='R') | Q(last_name__startswith='D'))
+qs = User.objests.filter(Q(first_name__startwith='R') & Q(last_name__startswith='D'))
+qs = User.objects.filter(
+    first_name__startswith='R',
+    last_name__startswith='D'
+)
+
+qs = User.objects.filter(Q(id__lt=5))
+qs = User.objects.filter(~Q(id__lt=5)) # exclude(<condition>)
+
+q1 = User.objects.filter(id__gte=3)
+q2 = User.objects.filter(id__lte=5)
+q1.union(q2)
+q2.union(q1)
+
+qs = User.objects.filter(
+    first_name__startswith='R'
+).values('first_name', 'last_name')
+qs = User.objects.filter(
+    first_name__startswith='R'
+).only('first_name', 'last_name')
+
+from django.db.models import F
+User.objects.filter(last_name=F('first_name'))
+
+from events.models import Article
+a = Article.objects.filter(reporter__username='augustine')
+
+user = User.objects.order_by('-last_login')[0]
+
+from django.db.models import Count
+duplicates = User.objects.values(
+    'first_name'
+).annotate(name_count=Count('first_name')).filter(name_count__gt=1)
+
+distinct = User.objects.values(
+    'first_name'
+).annotate(
+    name_count=Count('first_name')
+).filter(name_count=1)
+records = User.objects.filter(first_name__in=[item['first_name'] for item in distinct])
+
+qs = User.objects.filter(
+    Q(first_name__startswith='R') & ~Q(first_name__startswith='Z')
+)
+
+from django.db.models import Avg, Max, Min, Sum, Count
+User.objects.all().aggregate(Min('id'))
+User.objects.all().aggregate(Max('id'))
+
+from entities.models import Category, Hero
+import random
+
+def get_random():
+    max_id = User.objects.all().aggregate(max_id=Max('id'))['max_id']
+    pk = random.randint(1, max_id)
+    return User.objects.get(pk=pk)
+
+Category.objects.bulk_create(
+    [Category(name="God"),
+     Category(name="Demi God"),
+     Category(name="Mortal")]
+)
+
+from django.utils.dateparse import parse_date
+user = User.objects.get(id=1)
+date_str = "2020-12-11"
+temp_date = parse_date(date_str)
+a1 = Article(headline="String converted to date", pub_date=temp_date, reporter=user)
+a1.save()
+a1.pub_date
+
+User.objects.all().order_by('date_joined', '-last_login')
+
+from django.db.models.functions import Lower
+User.objects.all().order_by(Lower('username')).values_list('username', flat=True)
+User.objects.all().order_by('is_active', '-last_login', 'first_name')
+
+Hero.objects.all().order_by(
+    'category__name', 'name'
+)
+Category.objects.annotate(
+    hero_count=Count('hero')
+).order_by(
+    '-hero_count'
+)
+```

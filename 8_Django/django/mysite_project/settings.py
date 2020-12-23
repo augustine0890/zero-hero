@@ -40,6 +40,8 @@ INSTALLED_APPS = [
 
     # Local
     'polls.apps.PollsConfig',
+    'entities.apps.EntitiesConfig',
+    'events.apps.EventsConfig',
 ]
 
 MIDDLEWARE = [
