@@ -97,3 +97,20 @@ Model.objects.filter(blog=b) # Query using object instance
 Model.objects.filter(blog=b.id) # Query using id from instance
 Model.objects.filter(blog=5) # Query using id directly
 ```
+
+### Aggregation
+
+```python
+from django.db.models import Avg, Min, Max, Sum, FloatField, Count, Q
+
+Model.objects.count()
+Model.objects.all().aggregate(Avg('field'))
+Model.objects.all().aggregate(Max('field'))
+Model.objects.aggregate(Avg('field'))
+Model.objects.aggregate(field_diff=Max('field', output_field=FloatField()) - Avg('field'))
+Model.objects.annotate(num_field=Count('field'))
+above_5 = Count('model', filter=Q(model__rating__gt=5))
+below_5 = Count('model', filter=Q(model__rating__lte=5))
+
+Model.objects.filter(field__startswith="Django").annotate(num_field=Count('field'))
+```
