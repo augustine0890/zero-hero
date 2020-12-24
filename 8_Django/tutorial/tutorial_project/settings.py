@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
     # Local
     'quickstart.apps.QuickstartConfig',
+    'snippets.apps.SnippetsConfig',
 ]
 
 MIDDLEWARE = [
