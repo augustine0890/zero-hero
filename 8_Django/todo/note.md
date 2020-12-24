@@ -1,5 +1,6 @@
 # Todo API
 
+## Backend
 ```
 .
 ├── backend
@@ -30,6 +31,16 @@
 
 **Serializers**
 - Transform data from the models into JSON that will be outputted at URLs
-- In traditional Django
+- In traditional Django `views` are used to customize what data to send to the templates. In DRF views do the same thing but for our serialized data.
 
+**CORS (Cross-Origin Resource Sharing)**
+- CORS requires the server to include specific HTTP headers that allow for the client to determine if and when cross-domain requests should be allowed.
+`pipenv install django-cors-headers==3.2.1`
 
+## Frontend
+- Create new React app called `frontend`<br>
+`npx create-react-app frontend`
+`cd frontend && npm start`
+
+**Django REST Framework + React**
+`npm install axios --save`
