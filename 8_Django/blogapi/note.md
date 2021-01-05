@@ -9,4 +9,13 @@
 
 - Install REST framework
     - `pipenv install djangorestframework==3.11.0`
-    
+
+**View-Level Permissions**
+- Restrict API access to authenticated users.
+- Add a `permission_classes` field to each view.
+
+**Project-Level Permissions**
+- AllowAny - any user, authenticated or not, has full access.
+- IsAuthenticated - only authenticated, registered users have access
+- IsAdminUser - only admins/superusers have access
+- IsAuthenticatedOrReadOnly - unauthorized users can view any page, but only authenticated users have write, edit, or delete privileges
