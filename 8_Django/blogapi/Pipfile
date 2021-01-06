@@ -8,6 +8,9 @@ django = "==3.0.3"
 djangorestframework = "==3.11.0"
 dj-rest-auth = "==1.0.4"
 django-allauth = "==0.41.0"
+pyyaml = "==5.3"
+uritemplate = "==3.0.1"
+drf-yasg = "==1.20.0"
 
 [dev-packages]
 

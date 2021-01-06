@@ -64,3 +64,22 @@
 
 **Routers**
 - Routers work directly with viewsets to automatically generate URL patterns
+
+## Schemas and Documentation
+**Schema**
+- Machine-readable document that outlines all available API endpoints, URLs, and the HTTP verbs.
+- __OpenAPI__ schema (known as Swagger)
+- Install _pyyaml_: render out schema in the commonly used YAML-based OpenAPI format.
+    -  `pipenv install pyyaml==5.3`
+    -  `pipenv install uritemplate==3.0.1`
+- If API does not change often --> static schema can be generated periodically and served from static files for strong performance. If API does change quite often --> consider dynamic option.
+- The _generateschema_ --> output file _openapi-schema.yml_
+    - `python manage.py generateschema > openapi-schema.yml`
+
+**Documentation**
+- API Documentation translates schema into a much friendlier format for fellow developers.
+- _SwaggerUI_, _ReDoc_, or the third-party `drf-yasg` package.
+- Install `drf-yasg`
+    - `pipenv install drf-yasg==1.17.1`
+- The Swagger endpoint is `http://127.0.0.1:8000/swagger/`
+- The ReDoc view is `http://127.0.0.1:8000/redoc/`
