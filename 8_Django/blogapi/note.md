@@ -51,3 +51,16 @@
 -  Include `EMAIL_BACKEND` and `SITE_ID`.
 
 - Third-party packages: `dj-rest-auth` and `django-allauth`
+
+## Viewsets and Routers
+- Traditional dj has a built-in `User` model class.
+- The steps for wire up new endpoints
+    - New serializer class for the model
+    - New views for each endpoint
+    - New URL routes for each endpoint
+
+**Viewsets**
+- The way to combine the logic for multiple related views into a single class. One viewset can replace multiple views.
+
+**Routers**
+- Routers work directly with viewsets to automatically generate URL patterns
