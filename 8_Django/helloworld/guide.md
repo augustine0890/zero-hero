@@ -100,3 +100,27 @@
     - `services`: (or containers) that want to running within Docker host. It's possible to have multiple `services` running.
     - The volumes mount automatically syncs the Docker filesystem with local computer's filesystem
     - Run Docker container: `docker-compose up`
+
+## PostgreSQL
+- Adding the `--build` flag to force an image build when software packages are updated
+- Opposed to locally: 
+    - `docker exec -it <name> <command>`
+- PostgreSQL is not file-based. When execute `docker-compose down` all data within it will be lost.
+- In `project/settings.py`
+    ```
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'postgres',
+            'USER': 'postgres',
+            'PASSWORD': 'postgres',
+            'HOST': 'db',
+            'PORT': 5432
+        }
+    }
+    ```
+**Psycopg**
+- Database adapter for Python.
+- Install Psycopg
+    - `docker exec <name> pip install psycopg2-binary==2.8.5`
+    - `pip install --upgrade pip`
