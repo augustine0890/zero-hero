@@ -48,6 +48,9 @@ modules.xml
 
 # misc
 .DS_Store
+.env.dev
+.env.prod
+.env.prod.db
 .env.local
 .env.development.local
 .env.test.local
