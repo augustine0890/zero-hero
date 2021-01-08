@@ -124,3 +124,50 @@
 - Install Psycopg
     - `docker exec <name> pip install psycopg2-binary==2.8.5`
     - `pip install --upgrade pip`
+- Docker containers do not store persistent data so anything we want to keep like source code or database information.
+- Create a `CustomUser` model
+    - `docker exec -it <backend-dockername> python manage.py startapp <appname-users>`
+- Remove the volumes along with the containers: 
+    - `docker-compose down -v`
+
+- Make sure the default Django tables were created:
+    - `docker-compose exec db psql --username=augustine --dbname=django_db`
+    - `\l` --> list all of databases
+    - `\c django_db`
+    - `\dt`
+    - `\q`
+-  Add `entrypoint.sh` file to the directory to verify that Postgres is healthy before applying the migrations and running the Django development server
+    ```
+    #!/bin/sh
+
+    if [ "$DATABASE" = "postgres" ]
+    then
+        echo "Waiting for postgres..."
+
+        while ! nc -z $SQL_HOST $SQL_PORT; do
+          sleep 0.1
+        done
+
+        echo "PostgreSQL started"
+    fi
+
+    python manage.py flush --no-input
+    python manage.py migrate
+
+    exec "$@"
+    ```
+- Update the file permissions locally
+    - `chmod +x entrypoint.sh`
+
+- Run manually
+    - `docker-compose exec web python manage.py flush --no-input`
+    - `docker-compose exec web python manage.py migrate`
+
+## Production Dockerfile
+- Docker multi-stage build to reduce the final image size
+    - `docker-compose -f docker-compose.prod.yml down -v`
+    - `docker-compose -f docker-compose.prod.yml up -d --build`
+    - `docker-compose -f docker-compose.prod.yml exec web python manage.py migrate --noinput`
+
+## Nginx
+- 
