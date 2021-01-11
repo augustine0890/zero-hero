@@ -199,4 +199,4 @@
     }
     ```
 - Port `8000` in only exposed internally, to other Docker services. The port will no longer be published to the host machine.
-- Ensure the app is up and running at http://localhost:1337.
+- Ensure the app is up and running at http://localhost:1337
