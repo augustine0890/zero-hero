@@ -1,14 +1,16 @@
 from django.utils import timezone
 from django.db import models
 
+from decimal import Decimal
+
 
 class Product(models.Model):
-    DISCOUNT_RATE = 0.10
+    DISCOUNT_RATE = Decimal.from_float(0.10)
 
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=200)
     description = models.TextField()
-    price = models.FloatField()
+    price = models.DecimalField(max_digits=5, decimal_places=2)
     sale_start = models.DateTimeField(blank=True, null=True, default=None)
     sale_end = models.DateTimeField(blank=True, null=True, default=None)
     photo = models.ImageField(blank=True, null=True, default=None, upload_to='products')
@@ -19,7 +21,7 @@ class Product(models.Model):
             if self.sale_end:
                 return self.sale_start <= now <= self.sale_end
             return self.sale_start <= now
-        return False
+        return False 
     
     def get_rounded_price(self):
         return round(self.price, 2)
