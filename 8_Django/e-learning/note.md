@@ -32,3 +32,11 @@ subjects.json
 ```
 - Load the fixture into the database
     - `python manage.py loaddata subjects.json`
+
+## Model Inheritance
+- __Abstract models__: useful when you want to put some common information into several models.
+- __Multi-table model inheritance__: applicable when each model in the hierarchy is considered a complete model by itself
+- __Proxy models__: useful when you need to change the behavior of a model.
+
+## Custom model fields
+- Writing custom model fields at [link](https://docs.djangoproject.com/en/3.1/howto/custom-model-fields/)
