@@ -200,3 +200,26 @@
     ```
 - Port `8000` in only exposed internally, to other Docker services. The port will no longer be published to the host machine.
 - Ensure the app is up and running at http://localhost:1337
+
+
+## Python Enviroment
+- Create virtual environment
+    - `pyenv virtualenv 3.8.6 my-env`
+- Activate virtual environment
+    - `pyenv activate my-env`
+- Exit virtual environment
+    - `pyenv deactivate`
+- Package Management
+    - `pip list`
+    - `python -m pip install requirements.txt`
+- Setting environment variable
+    - `export $(cat .env)`
+
+
+```
+- docker-compose -f docker-compose-local.yml up --build
+- docker-compose -f docker-compose-local.yml down -v
+- docker-compose -f docker-compose-local.yml run django python manage.py makemigrations
+- docker-compose -f docker-compose-local.yml run django python manage.py - migrate
+- docker-compose -f docker-compose-local.yml run django python manage.py - migrate --database=ahead
+```
