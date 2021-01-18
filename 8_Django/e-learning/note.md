@@ -40,3 +40,15 @@ subjects.json
 
 ## Custom model fields
 - Writing custom model fields at [link](https://docs.djangoproject.com/en/3.1/howto/custom-model-fields/)
+
+## Authentication templates
+- `http://127.0.0.1:8000/accounts/login/`
+
+## Using mixins for class-based views
+- Class- based views [Link](https://docs.djangoproject.com/en/3.1/topics/class-based-views/mixins/)
+- Multiple optional features for a class
+- Particular feature in several classes
+
+## Using mixins from django-braces
+- Check a list of all mixins provided by `django-braces` at [here](https://django-braces.readthedocs.io/en/latest/)
+- `pip install django-braces==1.14.0`

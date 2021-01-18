@@ -159,5 +159,3 @@
     # mysql stop
     $ mysql.server stop
   ```
-
-
