@@ -60,3 +60,39 @@ subjects.json
     - `success_url`: the URL to redirect the user to when the form is successfully submitted.
 - The `form_valid()` method is executed when valid form has been posted. It has to return an HTTP response.
 
+## Using the cache framework
+- By caching queries, calculation results, or rendered content in an HTTP request --> avoid expensive operations
+- Django's cache system at [here](https://docs.djangoproject.com/en/3.1/topics/cache/)
+- Istall `Memcached`
+    - `brew install memcached`
+- Start `memcached`
+    - `memcached -l 127.0.0.1:11211` --> `brew services start memcached`
+    - Run on port `11211` by default
+    - Custom host and port by using the `-l` option
+    - `brew services restart memcached`
+    - `brew services stop memcached`
+- Python bindings
+    - `pip install python-memcached==1.59`
+
+## Cache Settings
+- `CACHES`: a dictionary containing all available caches
+- `CACHE_MIDDLEWARE_ALIAS`: the cache alias to use for storage
+- `CACHE_MIDDLEWARE_KEY_PREFIX`: prefix to use for cache keys (Set a prefix to avoid key collisions if you share the same cache between several sites)
+- `CACHE_MIDDLEWARE_SECONDS`: the default number of seconds to cache pages
+BACKEND: The cache backend to use.
+- `KEY_FUNCTION`: A string containing a dotted path to a callable that takes
+a prefix, version, and key as arguments and returns a final cache key.
+- `KEY_PREFIX`: A string prefix for all cache keys, to avoid collisions.
+- `LOCATION`: The location of the cache. Depending on the cache backend, this might be a directory, a host and port, or a name for the in-memory backend.
+- `OPTIONS`: Any additional parameters to be passed to the cache backend.
+- `TIMEOUT`: The default timeout, in seconds, for storing the cache keys. It is 300 seconds by default, which is five minutes. If set to None, cache keys will not expire.
+- `VERSION`: The default version number for the cache keys. Useful for cache versioning.
+
+**Monitoring Memcached**
+- `pip install django-memcache-status==2.2`
+
+**Cache levels**
+- __Low-level cache API__: Provides the highest granularity. Allows you to cache specific queries or calculations.
+- __Template cache__: Allows you to cache template fragments.
+- __Per-view cache__: Provides caching for individual views.
+- __Per-site cache__: The highest-level cache. It caches your entire site.
