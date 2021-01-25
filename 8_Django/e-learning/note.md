@@ -52,3 +52,11 @@ subjects.json
 ## Using mixins from django-braces
 - Check a list of all mixins provided by `django-braces` at [here](https://django-braces.readthedocs.io/en/latest/)
 - `pip install django-braces==1.14.0`
+
+## CreateView
+- Provides the functionality for creating model objects.
+    - `template_name`: the path of the template to render this view.
+    - `form_class`: the form for creating objects, which has to be _ModelForm_.
+    - `success_url`: the URL to redirect the user to when the form is successfully submitted.
+- The `form_valid()` method is executed when valid form has been posted. It has to return an HTTP response.
+
